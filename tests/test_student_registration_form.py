@@ -10,7 +10,6 @@ def given_opened_text_box_page():
         ads.perform(command.js.remove)
 
 
-# DO
 def test_submit_registration_form():
     browser.open('https://demoqa.com/automation-practice-form')
     given_opened_text_box_page()
@@ -30,7 +29,6 @@ def test_submit_registration_form():
     browser.element('#submit').perform(command.js.click)
 
 
-# ASSERT
 def check_submitted_data():
     browser.element('.table-responsive').should(have.text('Тигран Светов'))
     browser.element('.table-responsive').should(have.text('	mrlibertarian@gmail.com'))
