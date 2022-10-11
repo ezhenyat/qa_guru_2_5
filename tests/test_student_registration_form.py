@@ -11,6 +11,8 @@ def given_opened_text_box_page():
 
 
 def test_submit_registration_form():
+
+    # DO
     browser.open('https://demoqa.com/automation-practice-form')
     given_opened_text_box_page()
     browser.element('#firstName').type('Тигран')
@@ -28,7 +30,7 @@ def test_submit_registration_form():
     city_selector.type('Noi').press_enter()
     browser.element('#submit').perform(command.js.click)
 
-def check_submitted_data():
+    # ASSERT
     browser.element('.table-responsive').should(have.text('Тигран Светов'))
     browser.element('.table-responsive').should(have.text('mrlibertarian@gmail.com'))
     browser.element('.table-responsive').should(have.text('Male'))
@@ -37,7 +39,7 @@ def check_submitted_data():
     browser.element('.table-responsive').should(have.text('Maths, Biology'))
     browser.element('.table-responsive').should(have.text('Reading'))
     browser.element('.table-responsive').should(have.text('kitten.png'))
-    browser.element('.table-responsive').should(have.text('Tbilisi, Petre Kavtaradze, 22a'))
+    browser.element('.table-responsive').should(have.text('Petre Kavtaradze, 22a'))
     browser.element('.table-responsive').should(have.text('NCR Noida'))
 
 
